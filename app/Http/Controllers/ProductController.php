@@ -18,7 +18,9 @@ class ProductController extends Controller
     {
         // return Product::all();
         // return ProductResource::collection(Product::all()); // this one will return everything with detail
-        return ProductCollection::collection(Product::all());
+        //return ProductCollection::collection(Product::all()); // this will return ProductCollectionthat show all products
+        // paginate
+        return ProductCollection::collection(Product::paginate(5));
     }
 
     /**
